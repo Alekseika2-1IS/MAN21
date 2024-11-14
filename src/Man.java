@@ -1,30 +1,7 @@
-import java.util.Random;
-
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Man {
-        private Random rnd = new Random();
+    public static void main(String[] args) {
 
-        public Man(String _name);
-
-        {
-            Name = _name;
-            isLife = true;
-        }
-
-        private String Name;
-        private int Age;
-        private int Health;
-        private boolean isLife;
-
-        public void Talk() {
-
-        }
-
-        public void Go() {
-
-        }
-
-        public boolean IsAlive() {
-            return isLife;
-        }
     }
-
+}

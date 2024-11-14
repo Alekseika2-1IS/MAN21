@@ -30,8 +30,60 @@ public class Programm {
                 case "create_man": {
                     if (someman != null ){
                         someman.kill();
-                        System.out.println("Человек");
                     }
+                    System.out.println("Введите имя создаваемого человека: ");
+                    user_command = scanner.nextLine();
+                    someman = new Man(user_command);
+                    System.out.println("Человек успешно создан");
+                    break;
+                }
+                case "kill_man": {
+                    if (someman != null){
+                        someman.kill();
+                        System.out.println("Человек умер");
+                    } else {
+                        System.out.println("Человек не создан. Команда была не выполнена!");
+                    }
+                    break;
+                }
+                case "talk": {
+                    if (someman != null && someman.isAlive() == true) {
+                    }
+                    break;
+                }
+                case "talk": {
+                    if (someman != null && someman.isAlive() == true){
+                        someman.Talk();
+                    } else {
+                        System.out.println("Человек не создан. Команда не была выполнена");
+                    }
+                    break;
+                }
+                case "go": {
+                    if (someman != null && someman.isAlive() == true){
+                        someman.Go();
+                    } else {
+                        System.out.println("Человек не создан. Команда не выполнена");
+                    }
+                    break;
+                }
+                case "is_alive": {
+                    if(someman != null){
+                        if(someman.isAlive() == true){
+                            System.out.println("Человек жив");
+                        } else {
+                            System.out.println("Человек мертв");
+                        }
+                    } else {
+                        System.out.println("Челове не создан. Команда не выполнена");
+                    }
+                    break;
+                }
+                default: {
+                    System.out.println("Ваша команда не опеределена пожалуйста повторите еще раз");
+                    System.out.println("Для вывода списка команд введите команду help");
+                    System.out.println("Для завершения пграммы введите команду exit");
+                    break;
                 }
             }
         }

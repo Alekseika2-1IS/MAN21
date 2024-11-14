@@ -47,11 +47,6 @@ public class Programm {
                     break;
                 }
                 case "talk": {
-                    if (someman != null && someman.isAlive() == true) {
-                    }
-                    break;
-                }
-                case "talk": {
                     if (someman != null && someman.isAlive() == true){
                         someman.Talk();
                     } else {
@@ -82,7 +77,7 @@ public class Programm {
                 default: {
                     System.out.println("Ваша команда не опеределена пожалуйста повторите еще раз");
                     System.out.println("Для вывода списка команд введите команду help");
-                    System.out.println("Для завершения пграммы введите команду exit");
+                    System.out.println("Для завершения программы введите команду exit");
                     break;
                 }
             }

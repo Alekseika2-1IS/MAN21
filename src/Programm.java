@@ -21,7 +21,7 @@ public class Programm {
                     System.out.println("kill_man: команда убивает человека");
                     System.out.println("talk: команда заставляет человека говорить (если создан экземпляр класса)");
                     System.out.println("go: команда заставляет человека идти (если создан экземпляр класса)");
-                    System.out.println("isalive: команда проверяет, жив ли человек (если создан экземпляр класса)");
+                    System.out.println("is_alive: команда проверяет, жив ли человек (если создан экземпляр класса)");
                     System.out.println();
                     System.out.println("----------------");
                     System.out.println("----------------");
@@ -40,7 +40,7 @@ public class Programm {
                 case "kill_man": {
                     if (someman != null){
                         someman.kill();
-                        System.out.println("Человек умер");
+                        System.out.println("Человек был убит админом");
                     } else {
                         System.out.println("Человек не создан. Команда была не выполнена!");
                     }
@@ -67,10 +67,10 @@ public class Programm {
                         if(someman.isAlive() == true){
                             System.out.println("Человек жив");
                         } else {
-                            System.out.println("Человек мертв");
+                            System.out.println("Человек мертв или убит");
                         }
                     } else {
-                        System.out.println("Челове не создан. Команда не выполнена");
+                        System.out.println("Человек не создан. Команда не выполнена");
                     }
                     break;
                 }

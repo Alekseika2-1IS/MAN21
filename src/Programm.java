@@ -2,19 +2,22 @@ import java.util.Scanner;
 public class Programm {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        var user_command = "";
+        var user_command = ""; //переменная которая будет хранить команду пользователя
         Man someman = null;
+        //создаю бесконечный цикл
         boolean infinity = true;
         while (infinity){
-            System.out.println("Введите команду: ");
-            user_command = scanner.nextLine();
+            System.out.println("Введите команду: "); //вывод окна для написания команды
+            user_command = scanner.nextLine(); //получение команды от пользователя
+            //тут обработка команды которую ввел пользователь
             switch (user_command){
                 case "exit": {
                     infinity = false;
                     break;
                 }
+                //выводится help если пользователь ее ввел в окно для написания команды
                 case "help": {
-                    System.out.println("Список команд: ");
+                    System.out.println("Список доступных команд: ");
                     System.out.println("-----------------");
                     System.out.println();
                     System.out.println("create_man: команда создает человека, (экземпляр класса Man)");
@@ -27,6 +30,7 @@ public class Programm {
                     System.out.println("----------------");
                     break;
                 }
+                //проверка создан ли человек
                 case "create_man": {
                     if (someman != null ){
                         someman.kill();
@@ -75,8 +79,8 @@ public class Programm {
                     break;
                 }
                 default: {
-                    System.out.println("Ваша команда не опеределена пожалуйста повторите еще раз");
-                    System.out.println("Для вывода списка команд введите команду help");
+                    System.out.println("Ваша команда не понятна, пожалуйста, повторите еще раз");
+                    System.out.println("Для вывода списка всех команд введите команду help");
                     System.out.println("Для завершения программы введите команду exit");
                     break;
                 }

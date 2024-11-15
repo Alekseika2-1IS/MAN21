@@ -18,11 +18,11 @@ public class Man {
         String tmp_str = "";
         switch (random_talk){
             case 1: {
-                tmp_str = "Привет, меня зовут " + Name + " ,рад познакомится!";
+                tmp_str = "Привет, меня зовут " + Name + " ,рад(а) познакомится!";
                 break;
             }
             case 2: {
-                tmp_str = "Мне " + Age;
+                tmp_str = "Мне " + Age + " лет";
                 break;
             }
             case 3: {
@@ -30,19 +30,19 @@ public class Man {
                 if (Health > 50)
                     tmp_str = "Да, я здоров";
                 else
-                    tmp_str = "Со здоровьем у меня хреново до жить бы " + Age_if;
+                    tmp_str = "Со здоровьем у меня хреново, хоть бы дожить до " + Age_if;
                 break;
             }
         }
         System.out.println(tmp_str);
     }
-    public void Go () {
+    public void Go() {
         if (isLife) {
             if (Health > 40){
                 String outString = Name + " миро гуляет по городу";
                 System.out.println(outString);
             } else {
-                String outString2 = Name + " болен и не может гулять";
+                String outString2 = Name + " болен(а) и не может гулять по городу";
                 System.out.println(outString2);
             }
         } else {

@@ -11,6 +11,7 @@ public class Programm {
             user_command = scanner.nextLine(); //получение команды от пользователя
             //тут обработка команды которую ввел пользователь
             switch (user_command){
+                //цикл завершается и прогга завершает свою работу
                 case "exit": {
                     infinity = false;
                     break;
@@ -35,14 +36,16 @@ public class Programm {
                     if (someman != null ){
                         someman.kill();
                     }
+                    //просьба ввести имя для персонажа
                     System.out.println("Введите имя создаваемого человека: ");
                     user_command = scanner.nextLine();
-                    someman = new Man(user_command);
-                    System.out.println("Человек успешно создан");
+                    someman = new Man(user_command);//создаю объект в памяти и в качестве параметра и передаю имя человека
+                    System.out.println("Человек успешно создан!");
                     break;
                 }
+                //команда которая убивает человека
                 case "kill_man": {
-                    if (someman != null){
+                    if (someman != null){ //проверка что человек уже существует
                         someman.kill();
                         System.out.println("Человек был убит админом");
                     } else {
@@ -50,7 +53,9 @@ public class Programm {
                     }
                     break;
                 }
+                //команда которая вызывает функцию разговора
                 case "talk": {
+                    //проверка что человек уже существует
                     if (someman != null && someman.isAlive() == true){
                         someman.Talk();
                     } else {
@@ -58,7 +63,9 @@ public class Programm {
                     }
                     break;
                 }
+                //команда которая вызывает функцию гульбы по городу
                 case "go": {
+                    //проверка что человек уже существует
                     if (someman != null && someman.isAlive() == true){
                         someman.Go();
                     } else {
@@ -66,7 +73,9 @@ public class Programm {
                     }
                     break;
                 }
+                //команда которая проверяет жив ли человек
                 case "is_alive": {
+                    //проверка что человек уже существует
                     if(someman != null){
                         if(someman.isAlive() == true){
                             System.out.println("Человек жив");
@@ -78,6 +87,7 @@ public class Programm {
                     }
                     break;
                 }
+                //другие варианты ответа если прошлые команды были введены неправильно
                 default: {
                     System.out.println("Ваша команда не понятна, пожалуйста, повторите еще раз");
                     System.out.println("Для вывода списка всех команд введите команду help");

@@ -3,30 +3,35 @@ import java.util.Scanner;
 
 public class Man {
     private final Random rnd = new Random();
+    //конструктор класса(данная функция вызывается при создании нового экземпляра класс
     public Man (String _name){
-        Name = _name;
+        Name = _name; //получаю имя человека из входного параметра конструктора класс
         isLife = true;
-        Age = rnd.nextInt(15, 51);
-        Health = rnd.nextInt(10, 101);
+        Age = rnd.nextInt(15, 51);//генератор возраста от 15 до 50
+        Health = rnd.nextInt(10, 101);//генератор здоровья от 10% до 100%
     }
-    private final String Name;
-    private final int Age;
-    private final int Health;
-    private boolean isLife;
+    //закрытые члены которые нельзя изменить извне класса
+    private final String Name; //строка содержащая имя
+    private final int Age; //строка содержащая беззнаковое целое число возраста
+    private final int Health; //строка содержащая беззнаковое целое число здоровья
+    private boolean isLife; //строка содержащая булевоек означающее жив ли человек
+    //заготовка функции говорить
     public void Talk(){
+        //генераторная переменная разных фраз
         int random_talk = rnd.nextInt(1, 4);
+        //строка в кторую буду хранить строку
         String tmp_str = "";
         switch (random_talk){
             case 1: {
-                tmp_str = "Привет, меня зовут " + Name + " ,рад(а) познакомится!";
+                tmp_str = "Привет, меня зовут " + Name + " ,рад(а) познакомится!"; //если 1 называет имя
                 break;
             }
             case 2: {
-                tmp_str = "Мне " + Age + " лет";
+                tmp_str = "Мне " + Age + " лет"; //если 2 называем свой возраст
                 break;
             }
             case 3: {
-                String Age_if = Integer.toString(Age + 10);
+                String Age_if = Integer.toString(Age + 10); //если 3 то говорим о здоровье
                 if (Health > 50)
                     tmp_str = "Да, я здоров";
                 else
@@ -37,8 +42,9 @@ public class Man {
         System.out.println(tmp_str);
     }
     public void Go() {
+        //если жив человек
         if (isLife) {
-            if (Health > 40){
+            if (Health > 40){ //если показатель здоровья больше 40 считается что человек здоров
                 String outString = Name + " миро гуляет по городу";
                 System.out.println(outString);
             } else {
@@ -50,10 +56,12 @@ public class Man {
              System.out.println(outString3);
         }
     }
+    //функция возвращающая показатель жив ли человек
     public boolean isAlive(){
-        return isLife;
+        return isLife;//возвращаем значние к которому мы не можем обратится напрямую из вне класса так как он имеет статус private
     }
     public void kill(){
+        //устанавливаем значение isLife()(жив) в false
         isLife = false;
     }
 }
